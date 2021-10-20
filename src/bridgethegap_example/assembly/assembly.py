@@ -5,6 +5,7 @@ from __future__ import print_function
 
 from compas.geometry import Point
 from compas.geometry import Box, Frame, Vector
+from compas.datastructures import Mesh
 
 from assembly_information_model.assembly import Assembly
 
@@ -13,7 +14,7 @@ class BridgeAssembly(Assembly):
 
     def __init__(self, elements = None, pickup_baseframe = None, safety_distance = None,
                  attributes=None, default_element_attributes=None, default_connection_attributes=None):
-        super().__init__(elements=elements, attributes=attributes,
+        super(BridgeAssembly, self).__init__(elements=elements, attributes=attributes,
                          default_element_attributes=default_element_attributes,
                          default_connection_attributes=default_connection_attributes)
 
@@ -37,6 +38,8 @@ class BridgeAssembly(Assembly):
 
     def create_safety_frame(self, frame):
         safe_vector = [0,0,self.safety_distance]
+        print(frame)
+        print(safe_vector)
         safe_frame = Frame(frame[0] + safe_vector, frame[1], frame[2])
         return safe_frame
 
@@ -48,6 +51,17 @@ class BridgeAssembly(Assembly):
         print(object.path)
         return object
 
+    def create_meshes(self, object):
+        object.pick_box = Box(object.pickframe, object.length, object.width, object.height)
+        object.pick_mesh = Mesh.from_shape(object.pick_box)
+
+        object.drop_box = Box(object.center_frame, object.length, object.width, object.height)
+        object.drop_mesh = Mesh.from_shape(object.drop_box)
+
+        object.acm_box = Box(object.center_frame, object.length, object.width, object.height)
+        object.acm_mesh = Mesh.from_shape(object.acm_box)
+        return object
+
     def prepare_assembly(self):
         for element in self.elements:
             # if we want to grap pieces in the center, we must adapt
@@ -55,6 +69,7 @@ class BridgeAssembly(Assembly):
             # since we assume that the pieces can have various profiles
             element = self.define_pickframes(element)
             element = self.create_paths(element)
+            element = self.create_meshes(element)
         return 0
 
 
