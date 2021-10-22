@@ -25,7 +25,7 @@ def read(*names, **kwargs):
 
 
 about = {}
-exec(read('src', 'bridgethegap_example', '__version__.py'), about)
+exec(read('src', 'bridge_the_gap', '__version__.py'), about)
 
 setup(
     name=about['__title__'],

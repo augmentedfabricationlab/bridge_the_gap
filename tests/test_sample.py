@@ -1,4 +1,4 @@
-from bridgethegap_example import SampleClassName
+from bridge_the_gap import SampleClassName
 
 
 def test_calculate_answer():

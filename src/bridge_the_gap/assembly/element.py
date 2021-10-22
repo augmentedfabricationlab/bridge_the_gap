@@ -24,6 +24,7 @@ class BridgeElement(Element):
 
         self.frame = InputFrame
         self.length = Board_Length
+        self.node_to_node_length = Board_Length
         self.width = Board_Width
         self.height = Board_Height
         self.category = Category

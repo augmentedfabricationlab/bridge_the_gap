@@ -1,15 +1,15 @@
 ============================================================
-bridgethegap_example: bridgeTheGap_example
+bridge_the_gap: bridge_the_gap
 ============================================================
 
 .. start-badges
 
 .. image:: https://img.shields.io/badge/License-MIT-blue.svg
-    :target: https://github.com/augmentedfabricationlab/bridgethegap_example/blob/master/LICENSE
+    :target: https://github.com/augmentedfabricationlab/bridge_the_gap/blob/master/LICENSE
     :alt: License MIT
 
-.. image:: https://travis-ci.org/augmentedfabricationlab/bridgethegap_example.svg?branch=master
-    :target: https://travis-ci.org/augmentedfabricationlab/bridgethegap_example
+.. image:: https://travis-ci.org/augmentedfabricationlab/bridge_the_gap.svg?branch=master
+    :target: https://travis-ci.org/augmentedfabricationlab/bridge_the_gap
     :alt: Travis CI
 
 .. end-badges
@@ -26,7 +26,7 @@ Main features
 * feature
 * more features
 
-**bridgethegap_example** runs on Python x.x and x.x.
+**bridge_the_gap** runs on Python x.x and x.x.
 
 
 Documentation
@@ -54,7 +54,7 @@ Contributing
 
 Make sure you setup your local development environment correctly:
 
-* Clone the `bridgethegap_example <https://github.com/augmentedfabricationlab/bridgethegap_example>`_ repository.
+* Clone the `bridge_the_gap <https://github.com/augmentedfabricationlab/bridge_the_gap>`_ repository.
 * Install development dependencies and make the project accessible from Rhino:
 
 ::

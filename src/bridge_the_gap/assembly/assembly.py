@@ -21,6 +21,7 @@ class BridgeAssembly(Assembly):
         self.safety_distance = None
         self.pickup_base_frame = None
 
+
     def define_pickframes(self, object):
         # loop through the elements
         # first, we find the vector between the Pickbase and the

@@ -3,8 +3,8 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 from compas.geometry import Point, Frame, Vector, Scale, matrix_from_scale_factors
-from assembly import BridgeAssembly
-from element import BridgeElement
+from bridge_the_gap.assembly import BridgeAssembly
+from bridge_the_gap.assembly import BridgeElement
 
 my_assembly = BridgeAssembly()
 myFrame = Frame(Point(0.2, 0.2, 0.2), Vector(-1,0,0), Vector(0,1,0))

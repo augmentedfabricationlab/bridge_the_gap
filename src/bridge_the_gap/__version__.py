@@ -1,6 +1,6 @@
-__title__ = 'bridgethegap_example'
+__title__ = 'bridge_the_gap'
 __description__ = 'A short description of the project'
-__url__ = 'https://github.com/augmentedfabricationlab/bridgethegap_example'
+__url__ = 'https://github.com/augmentedfabricationlab/bridge_the_gap'
 __version__ = '0.1.0'
 __author__ = 'Augmented Fabrication Lab'
 __author_email__ = 'doerfler@tum.de'
