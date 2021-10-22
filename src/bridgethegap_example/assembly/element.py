@@ -18,25 +18,24 @@ from compas.geometry.primitives.plane import Plane
 
 
 class BridgeElement(Element):
-    def __init__(self, ID, InputFrame, Profile, LayerZAddon = None, Layer=None):
+    def __init__(self, InputFrame, Board_Length=None, Board_Width = None,
+                 Board_Height = None, Category=None, Index_In_Category = None):
         super(BridgeElement, self).__init__(InputFrame)
 
-        self.center_frame = InputFrame
-        self.id = ID
-        self.profile = Profile
-        self.length = self.profile[0]
-        self.width = self.profile[1]
-        self.height = self.profile[2]
-        self.layer = Layer
+        self.frame = InputFrame
+        self.length = Board_Length
+        self.width = Board_Width
+        self.height = Board_Height
+        self.category = Category
+        self.index_in_category = Index_In_Category
 
-        self.layer_z_addon = LayerZAddon
-        if LayerZAddon:
-            self.center_frame[0][2] += self.layer_z_addon
+    def define_tool_frame(self):
+        if self.height:
+            # the tool frame must be z/2 higher than the object center
+            self.tool_frame = self.frame
+            # 0 = origin point of the frame; 2 = z-Value
+            self.tool_frame[0][2] += self.height / 2
 
-        # the toolframe must be z/2 higher than the object center
-        self.tool_frame = self.center_frame
-        # 0 = origin point of the frame; 2 = z-Value
-        self.tool_frame[0][2] += self.profile[2]/2
 
 
 
