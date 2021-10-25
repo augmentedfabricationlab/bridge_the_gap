@@ -19,7 +19,8 @@ from compas.geometry.primitives.plane import Plane
 
 class BridgeElement(Element):
     def __init__(self, InputFrame, Board_Length=None, Board_Width = None,
-                 Board_Height = None, Category=None, Index_In_Category = None):
+                 Board_Height = None, Category=None, Index_In_Category = None,
+                 Line = None, Endpoints = None):
         super(BridgeElement, self).__init__(InputFrame)
 
         self.frame = InputFrame
@@ -29,6 +30,8 @@ class BridgeElement(Element):
         self.height = Board_Height
         self.category = Category
         self.index_in_category = Index_In_Category
+        self.center_line = Line
+        self.center_line_endpoints = Endpoints
 
     def define_tool_frame(self):
         if self.height:
