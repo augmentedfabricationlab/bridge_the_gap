@@ -11,7 +11,7 @@ my_assembly = BridgeAssembly()
 
 myFrameSet = [
 Frame(Point(13.009, 0.634, 0.000), Vector(0.987, -0.160, -0.000), Vector(-0.160, -0.987, 0.000)),
-Frame(Point(11.957, 0.629, 0.000), Vector(0.987, 0.161, 0.000), Vector(0.161, -0.987, 0.000)),
+Frame(Point(11.957, 0.629, 4.000), Vector(0.987, 0.161, 0.000), Vector(0.161, -0.987, 0.000)),
 Frame(Point(11.672, 0.175, 0.000), Vector(0.991, 0.132, 0.000), Vector(0.132, -0.991, 0.000)),
 Frame(Point(13.295, 0.183, 0.000), Vector(0.992, -0.127, -0.000), Vector(-0.127, -0.992, 0.000)),
 Frame(Point(13.766, 0.469, 0.000), Vector(0.966, -0.260, -0.000), Vector(-0.260, -0.966, 0.000)),
@@ -43,8 +43,10 @@ lengths = [0.72888612132232555, 0.79012319808336817, 0.95922231574812022, 0.8922
 
 
 my_assembly.add_element(BridgeElement(myFrameSet[0], Board_Length = 2.0, Endpoints = [Point(0,0,0),Point(1,0,0)]))
+my_assembly.add_element(BridgeElement(myFrameSet[0], Board_Length = 2.0, Endpoints = [Point(0,0,0),Point(1,0,0)]))
 my_assembly.add_element(BridgeElement(myFrameSet[1], Board_Length = 2.0, Endpoints = [Point(0,0,0),Point(2,2,0)]))
 
 #my_assembly.prepare_robot_assembly(model_scale=1000, safety_distance=0.4, pickup_baseframe=myFrame)
 my_assembly.create_network()
+print(my_assembly.create_assembly_sequence())
 print("hello")
