@@ -7,10 +7,7 @@ from bridge_the_gap.assembly import BridgeAssembly
 from bridge_the_gap.assembly import BridgeElement
 
 my_assembly = BridgeAssembly()
-myFrame = Frame(Point(0.2, 0.2, 0.2), Vector(-1,0,0), Vector(0,1,0))
-myElement = BridgeElement(myFrame, [0.1, 0.1], 1., 0.1)
-myElement2 = BridgeElement(myFrame, [0.1, 0.1], 1., 0.1)
-#myElement3 = BridgeElement(myFrame, Board_Length=0.1)
+
 
 myFrameSet = [
 Frame(Point(13.009, 0.634, 0.000), Vector(0.987, -0.160, -0.000), Vector(-0.160, -0.987, 0.000)),
@@ -44,9 +41,10 @@ Frame(Point(11.857, 0.402, 0.000), Vector(0.871, -0.492, -0.000), Vector(-0.492,
     ]
 lengths = [0.72888612132232555, 0.79012319808336817, 0.95922231574812022, 0.89226783409583033, 0.82289075249600907, 0.789766110625581, 0.69778136937749724, 0.68436229107796309, 0.85475878513586756, 0.82558731651669848, 0.52654551668359806, 0.60831582360268277, 0.30194229954981111, 0.4516400184602582, 0.5862299187450738, 0.49647652761125388, 0.49639133374753358, 0.58120093519414162, 0.40792440981993494, 0.70502681708793857, 0.13115222717909872, 0.1195717848785053, 0.55203112300537804, 0.48645499694101429, 0.6161305979839532, 0.48204989073413501, 0.46314232034724573, 0.6657938136277054]
 
-for i, frame in enumerate(myFrameSet):
-    my_assembly.add_element(BridgeElement(frame, Board_Length = lengths[i]))
 
-my_assembly.prepare_robot_assembly(model_scale=1000, safety_distance=0.4, pickup_baseframe=myFrame)
+my_assembly.add_element(BridgeElement(myFrameSet[0], Board_Length = 2.0, Endpoints = [Point(0,0,0),Point(1,0,0)]))
+my_assembly.add_element(BridgeElement(myFrameSet[1], Board_Length = 2.0, Endpoints = [Point(0,0,0),Point(2,2,0)]))
 
+#my_assembly.prepare_robot_assembly(model_scale=1000, safety_distance=0.4, pickup_baseframe=myFrame)
+my_assembly.create_network()
 print("hello")

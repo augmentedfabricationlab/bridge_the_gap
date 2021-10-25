@@ -41,16 +41,39 @@ class BridgeAssembly(Assembly):
         safe_frame = Frame(frame[0] + safe_vector, frame[1], frame[2])
         return safe_frame
 
-    def create_meshes(self, object):
-        object.pick_box = Box(object.pickframe, object.length, object.width, object.height)
-        object.pick_mesh = Mesh.from_shape(object.pick_box)
-
+    def create_object_meshes(self, object):
         object.drop_box = Box(object.frame, object.length, object.width, object.height)
         object.mesh = Mesh.from_shape(object.drop_box)
+        return object
+
+    def create_assembly_meshes(self, object):
+        if not object.mesh:
+            object = self.create_object_meshes(object)
+
+        object.pick_box = Box(object.pickframe, object.length, object.width, object.height)
+        object.pick_mesh = Mesh.from_shape(object.pick_box)
 
         object.acm_box = Box(object.frame, object.length, object.width, object.height)
         object.acm_mesh = Mesh.from_shape(object.acm_box)
         return object
+
+    def create_network(self):
+        for _k1, element1 in self.elements(data=False):
+            for _k2, element2 in self.elements(data=False):
+                if _k2 <= _k1:
+                    continue
+                end_points = []
+                for pt in element1.center_line_endpoints:
+                    end_points.append(pt)
+                for pt in element2.center_line_endpoints:
+                    end_points.append(pt)
+                for my_point in end_points:
+                    if end_points.count(my_point) > 1:
+                        print("Edge")
+                        self.network.add_edge(_k1, _k2)
+                        break
+        print(self.network.number_of_edges)
+        return 0
 
     # Scales the element with a factor of your choice
     # e.g. factor 0.1 means that the element is scaled down to 10% of its original size
@@ -93,6 +116,6 @@ class BridgeAssembly(Assembly):
             # now that we have the key elements, let's create the path
             element.path = [safety_frame_pick, element.pickframe, safety_frame_pick,
                             safety_frame_drop, element.tool_frame, safety_frame_drop]
-            element = self.create_meshes(element)
+            element = self.create_assembly_meshes(element)
         return 0
 
