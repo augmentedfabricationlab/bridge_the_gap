@@ -43,7 +43,7 @@ Requirements
 Dependencies
 ------------
 
-* [CEM](https://github.com/OleOhlbrock/CEM
+* [CEM](https://github.com/OleOhlbrock/CEM)
 * [COMPAS](https://compas-dev.github.io/)
 * [COMPAS FAB](https://gramaziokohler.github.io/compas_fab/latest/)
 * [Assembly Information Model](https://github.com/augmentedfabricationlab/assembly_information_model)
@@ -54,15 +54,24 @@ Dependencies
 Getting Started
 ------------
 
-### 1. Setting up the Anaconda environment with COMPAS and installing Dependencies
+**1. Setting up the Anaconda environment with COMPAS and installing Dependencies**
 
-Follow the installation guide in the [le-ar-n](https://github.com/le-ar-n/le-ar-n) repository. You may skip AM Information Model.
+* Follow the installation guide in the [le-ar-n](https://github.com/le-ar-n/le-ar-n) repository. You may skip AM Information Model.
 
-### 2. Installting CEM
+**2. Installing CEM**
 
 * Clone the [CEM](https://github.com/OleOhlbrock/CEM) repository into your projects folder.
-* Copy the content of the folder CEM/CEM_180/CEM_180_Rhino6_GHPlugin folder (or the CEM/CEM_200/CEM_200_Rhino7_GHPlugin in case you are using Rhino 7) into the Components Folder of Grasshopper (File --> Special Folders --> Components Folder).
+* Copy the content of the folder CEM/CEM_180/CEM_180_Rhino6_GHPlugin folder (or the CEM/CEM_200/CEM_200_Rhino7_GHPlugin in case you are using Rhino 7) into the Components Folder of Grasshopper (File --> Special Folders --> Components Folder) and restart Rhino.
 
+**3. Installing Karamba**
+
+* Go to the [Karamba](https://www.karamba3d.com/) website and download the Free (not the trial!) version.
+
+**4. Installing Bridge_the_Gap**
+::
+
+    (learn) python -m pip install git+https://github.com/augmentedfabricationlab/bridge_the_gap
+    (learn) python -m compas_rhino.install -p bridge_the_gap
 
 Contributing
 ------------
