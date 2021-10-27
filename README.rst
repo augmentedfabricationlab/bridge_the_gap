@@ -26,27 +26,42 @@ Main features
 * feature
 * more features
 
-**bridge_the_gap** runs on Python x.x and x.x.
+**bridge_the_gap** runs on Python 3.9 and compas_fab 0.19
 
-
-Documentation
--------------
-
-.. Explain how to access documentation: API, examples, etc.
-
-..
-.. optional sections:
 
 Requirements
 ------------
 
-.. Write requirements instructions here
+* Windows 10 Professional
+* Rhino 6 / Grasshopper
+* [Anaconda Python](https://www.anaconda.com/distribution/?gclid=CjwKCAjwo9rtBRAdEiwA_WXcFoyH8v3m-gVC55J6YzR0HpgB8R-PwM-FClIIR1bIPYZXsBtbPRfJ8xoC6HsQAvD_BwE)
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [Github Desktop](https://desktop.github.com/)
+* [Karamba 3D Free Version](https://www.karamba3d.com/)
 
 
-Installation
+Dependencies
 ------------
 
-.. Write installation instructions here
+* [CEM](https://github.com/OleOhlbrock/CEM
+* [COMPAS](https://compas-dev.github.io/)
+* [COMPAS FAB](https://gramaziokohler.github.io/compas_fab/latest/)
+* [Assembly Information Model](https://github.com/augmentedfabricationlab/assembly_information_model)
+* [AM Information Model](https://github.com/augmentedfabricationlab/am_information_model)
+* [UR Fabrication Control](https://github.com/augmentedfabricationlab/ur_fabrication_control)
+
+
+Getting Started
+------------
+
+### 1. Setting up the Anaconda environment with COMPAS and installing Dependencies
+
+Follow the installation guide in the [le-ar-n](https://github.com/le-ar-n/le-ar-n) repository. You may skip AM Information Model.
+
+### 2. Installting CEM
+
+* Clone the [CEM](https://github.com/OleOhlbrock/CEM) repository into your projects folder.
+* Copy the content of the folder CEM/CEM_180/CEM_180_Rhino6_GHPlugin folder (or the CEM/CEM_200/CEM_200_Rhino7_GHPlugin in case you are using Rhino 7) into the Components Folder of Grasshopper (File --> Special Folders --> Components Folder).
 
 
 Contributing
