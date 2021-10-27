@@ -1,18 +1,6 @@
-============================================================
-bridge_the_gap: bridge_the_gap
-============================================================
+# Bridge the Gap
 
-.. start-badges
-
-.. image:: https://img.shields.io/badge/License-MIT-blue.svg
-    :target: https://github.com/augmentedfabricationlab/bridge_the_gap/blob/master/LICENSE
-    :alt: License MIT
-
-.. image:: https://travis-ci.org/augmentedfabricationlab/bridge_the_gap.svg?branch=master
-    :target: https://travis-ci.org/augmentedfabricationlab/bridge_the_gap
-    :alt: Travis CI
-
-.. end-badges
+**Quick links:** [compas docs](https://compas-dev.github.io/main/) | [compas_fab docs](https://gramaziokohler.github.io/compas_fab/latest/)
 
 
 **This repository provides an examplatory workflow for designing and assembling a truss structure.**
