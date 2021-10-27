@@ -60,7 +60,7 @@ Getting Started
 **2. Installing CEM**
 
 * Clone the [CEM](https://github.com/OleOhlbrock/CEM) repository into your projects folder.
-* Copy the content of the folder CEM/CEM_180/CEM_180_Rhino6_GHPlugin folder (or the CEM/CEM_200/CEM_200_Rhino7_GHPlugin in case you are using Rhino 7) into the Components Folder of Grasshopper (File --> Special Folders --> Components Folder) and restart Rhino.
+* Copy the content of the folder "CEM/CEM_180/CEM_180_Rhino6_GHPlugin" (or "CEM/CEM_200/CEM_200_Rhino7_GHPlugin" in case you are using Rhino 7) into the Components Folder of Grasshopper (File --> Special Folders --> Components Folder) and restart Rhino.
 
 **3. Installing Karamba**
 
