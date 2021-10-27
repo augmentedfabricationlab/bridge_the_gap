@@ -1,6 +1,6 @@
 # Bridge the Gap
 
-**Quick links:** [compas docs](https://compas-dev.github.io/main/) | [compas_fab docs](https://gramaziokohler.github.io/compas_fab/latest/)
+**Quick links:** [compas docs](https://compas-dev.github.io/main/) | [compas_fab docs](https://gramaziokohler.github.io/compas_fab/latest/) | [le-ar-n](https://github.com/le-ar-n/le-ar-n) | [CEM](https://github.com/OleOhlbrock/CEM) | [Karamba](https://www.karamba3d.com/)
 
 
 **This repository provides an examplatory workflow for designing and assembling a truss structure.**
@@ -43,7 +43,7 @@ Getting Started
 
 **1. Setting up the Anaconda environment with COMPAS and installing Dependencies**
 
-* Follow the installation guide in the [le-ar-n](https://github.com/le-ar-n/le-ar-n) repository. You may skip AM Information Model.
+* Follow the installation guide in the [le-ar-n](https://github.com/le-ar-n/le-ar-n) repository. (you may skip installing the AM Information Model)
 
 **2. Installing CEM**
 
