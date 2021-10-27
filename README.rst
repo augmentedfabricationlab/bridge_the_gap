@@ -14,17 +14,16 @@ bridge_the_gap: bridge_the_gap
 
 .. end-badges
 
-.. Write project description
 
-**A short description of the project** ...
+**This repository provides an examplatory workflow for designing and assembling a truss structure.**
 
 
 Main features
 -------------
 
-* feature
-* feature
-* more features
+* Topological Formfinding
+* Structural Analysis
+* Robotic Assembly simulation
 
 **bridge_the_gap** runs on Python 3.9 and compas_fab 0.19
 
@@ -73,42 +72,6 @@ Getting Started
     (learn) python -m pip install git+https://github.com/augmentedfabricationlab/bridge_the_gap
     (learn) python -m compas_rhino.install -p bridge_the_gap
 
-Contributing
-------------
-
-Make sure you setup your local development environment correctly:
-
-* Clone the `bridge_the_gap <https://github.com/augmentedfabricationlab/bridge_the_gap>`_ repository.
-* Install development dependencies and make the project accessible from Rhino:
-
-::
-
-    pip install -r requirements-dev.txt
-    invoke add-to-rhino
-
-**You're ready to start working!**
-
-During development, use tasks on the
-command line to ease recurring operations:
-
-* ``invoke clean``: Clean all generated artifacts.
-* ``invoke check``: Run various code and documentation style checks.
-* ``invoke docs``: Generate documentation.
-* ``invoke test``: Run all tests and checks in one swift command.
-* ``invoke add-to-rhino``: Make the project accessible from Rhino.
-* ``invoke``: Show available tasks.
-
-For more details, check the `Contributor's Guide <CONTRIBUTING.rst>`_.
-
-
-Releasing this project
-----------------------
-
-.. Write releasing instructions here
-
-
-.. end of optional sections
-..
 
 Credits
 -------------
