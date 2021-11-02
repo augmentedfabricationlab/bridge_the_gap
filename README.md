@@ -40,6 +40,8 @@ Dependencies
 Getting Started
 ------------
 
+* Clone this repository to your PC via Github Desktop.
+
 **1. Setting up the Anaconda environment with COMPAS and installing Dependencies**
 
 * Follow the installation guide in the [le-ar-n](https://github.com/le-ar-n/le-ar-n) repository. (you may skip installing the AM Information Model)
@@ -56,7 +58,7 @@ Getting Started
 **4. Installing Bridge_the_Gap**
 ::
 
-    (learn) python -m pip install git+https://github.com/augmentedfabricationlab/bridge_the_gap@master#egg=bridge_the_gap
+    (learn) python -m pip install git+https://github.com/augmentedfabricationlab/bridge_the_gap@main#egg=bridge_the_gap
     (learn) python -m compas_rhino.install -p bridge_the_gap
 
 
