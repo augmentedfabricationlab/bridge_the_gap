@@ -56,7 +56,7 @@ Getting Started
 **4. Installing Bridge_the_Gap**
 ::
 
-    (learn) python -m pip install git+https://github.com/augmentedfabricationlab/bridge_the_gap
+    (learn) python -m pip install git+https://github.com/augmentedfabricationlab/bridge_the_gap@master#egg=bridge_the_gap
     (learn) python -m compas_rhino.install -p bridge_the_gap
 
 
