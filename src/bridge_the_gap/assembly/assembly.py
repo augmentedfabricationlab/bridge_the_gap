@@ -20,6 +20,7 @@ class BridgeAssembly(Assembly):
                          default_connection_attributes=default_connection_attributes)
         self.safety_distance = None
         self.pickup_base_frame = None
+        self.assembly_sequence = None
 
 
     def define_pickframes(self, object):
@@ -47,8 +48,8 @@ class BridgeAssembly(Assembly):
         return object
 
     def create_assembly_meshes(self, object):
-        if not object.mesh:
-            object = self.create_object_meshes(object)
+
+        object = self.create_object_meshes(object)
 
         object.pick_box = Box(object.pickframe, object.length, object.width, object.height)
         object.pick_mesh = Mesh.from_shape(object.pick_box)
@@ -75,6 +76,24 @@ class BridgeAssembly(Assembly):
         print(self.network.number_of_edges)
         return 0
 
+    def create_assembly_sequence(self):
+        def get_z(dict):
+            return dict["center_z"]
+
+        print("starting the sequence")
+        self.assembly_sequence = []
+        assembly_sorting_information = []
+        for _k, element in self.elements(data=False):
+            element_sorting_information = {"center_z": element.frame[0][2], "key": _k}
+            assembly_sorting_information.append(element_sorting_information)
+        assembly_sorting_information.sort(key=get_z)
+        print(assembly_sorting_information)
+        for entry in assembly_sorting_information:
+            self.assembly_sequence.append(entry["key"])
+        print(self.assembly_sequence)
+
+        return self.assembly_sequence
+
     # Scales the element with a factor of your choice
     # e.g. factor 0.1 means that the element is scaled down to 10% of its original size
     def scale_assembly(self, model_scale):
@@ -100,6 +119,7 @@ class BridgeAssembly(Assembly):
         if model_scale:
             self.scale_assembly(model_scale)
         for _k, element in self.elements(data=False):
+            element.path = []
             # the robot must grip the board on its top, not its very center
             # therefore, we must define a tool_frame which is height/2 higher than the center frame
             # we already defined a function for that in the element which we can call here
