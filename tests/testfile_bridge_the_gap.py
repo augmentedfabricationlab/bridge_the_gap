@@ -1,4 +1,4 @@
-from __future__ import division
+"""from __future__ import division
 from __future__ import absolute_import
 from __future__ import print_function
 
@@ -48,5 +48,12 @@ my_assembly.add_element(BridgeElement(myFrameSet[1], Board_Length = 2.0, Endpoin
 
 #my_assembly.prepare_robot_assembly(model_scale=1000, safety_distance=0.4, pickup_baseframe=myFrame)
 my_assembly.create_network()
+<<<<<<< HEAD
+print("hello")"""
+
+
+
+=======
 print(my_assembly.create_assembly_sequence())
+>>>>>>> 1deef8a6b6cfbc3bd39e164dccfdc4d741915e22
 print("hello")
