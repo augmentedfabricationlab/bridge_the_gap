@@ -33,6 +33,8 @@ class BridgeElement(Element):
         self.center_line = Line
         self.center_line_endpoints = Endpoints
 
+
+
     def define_tool_frame(self):
         if self.height:
             # the tool frame must be z/2 higher than the object center

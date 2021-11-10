@@ -4,7 +4,7 @@ from __future__ import print_function
 
 
 from compas.geometry import Point, Scale, matrix_from_scale_factors
-from compas.geometry import Box, Frame, Vector
+from compas.geometry import Box, Frame, Vector, Line
 from compas.datastructures import Mesh
 
 from assembly_information_model.assembly import Assembly
@@ -58,7 +58,7 @@ class BridgeAssembly(Assembly):
         object.acm_mesh = Mesh.from_shape(object.acm_box)
         return object
 
-    def create_network(self):
+    def create_network2(self):
         for _k1, element1 in self.elements(data=False):
             for _k2, element2 in self.elements(data=False):
                 if _k2 <= _k1:
@@ -70,11 +70,24 @@ class BridgeAssembly(Assembly):
                     end_points.append(pt)
                 for my_point in end_points:
                     if end_points.count(my_point) > 1:
-                        print("Edge")
+
                         self.network.add_edge(_k1, _k2)
                         break
         print(self.network.number_of_edges)
         return 0
+
+    def visualize_network(self):
+        connecting_lines =  []
+        for _k1, element1 in self.elements(data=False):
+            for edge_id in self.network.edge[_k1]:
+                if edge_id < _k1:
+                    continue
+                else:
+                    element2 = self.elements[edge_id]
+                    connecting_line = Line(element1.frame[0], element2.frame[1])
+                    connecting_lines.append(connecting_line)
+        return connecting_lines
+
 
     def create_assembly_sequence(self):
         def get_z(dict):
