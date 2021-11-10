@@ -57,8 +57,10 @@ my_assembly.add_element(BridgeElement(fram3, Board_Length = 2, Endpoints = [Poin
 
 
 #my_assembly.prepare_robot_assembly(model_scale=1000, safety_distance=0.4, pickup_baseframe=myFrame)
-my_assembly.create_network()
+
 print(my_assembly.create_assembly_sequence())
+my_assembly.create_network()
+my_assembly.visualize_network()
 print("hello")
 
 

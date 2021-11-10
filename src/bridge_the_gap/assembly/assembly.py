@@ -58,7 +58,7 @@ class BridgeAssembly(Assembly):
         object.acm_mesh = Mesh.from_shape(object.acm_box)
         return object
 
-    def create_network2(self):
+    def create_network(self):
         for _k1, element1 in self.elements(data=False):
             for _k2, element2 in self.elements(data=False):
                 if _k2 <= _k1:
@@ -79,16 +79,15 @@ class BridgeAssembly(Assembly):
     def visualize_network(self):
         connecting_lines =  []
         for _k1, element1 in self.elements(data=False):
-            for edge_id in self.network.edge[_k1]:
+            for edge_id in self.network.edge[_k1]:         
                 if edge_id < _k1:
                     continue
                 else:
-                    element2 = self.elements[edge_id]
-                    connecting_line = Line(element1.frame[0], element2.frame[1])
+                    element2 = self.element(edge_id, data=False)
+                    connecting_line = Line(element1.frame[0], element2.frame[0])
                     connecting_lines.append(connecting_line)
         return connecting_lines
-
-
+    
     def create_assembly_sequence(self):
         def get_z(dict):
             return dict["center_z"]
